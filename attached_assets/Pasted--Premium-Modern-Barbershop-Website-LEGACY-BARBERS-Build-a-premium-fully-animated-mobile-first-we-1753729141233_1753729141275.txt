@@ -1,0 +1,101 @@
+ Premium Modern Barbershop Website (LEGACY BARBERS)
+Build a premium, fully animated, mobile-first website for a modern barbershop brand — LEGACY BARBERS.
+
+🎯 Key Objectives:
+Design Focus:
+
+Ultra-modern, luxury feel
+
+Theme colors: Black, Gray, White with touches of Modern Red & Blue
+
+Rounded buttons only
+
+Responsive (Mobile-First) layout
+
+Every element must feel premium and polished
+
+Font should be clean and modern (e.g. Inter, Poppins, or similar)
+
+Animations:
+
+Heavy use of scroll animations (on every scroll)
+
+Icons and UI elements must have entrance/fade/scale animations
+
+Framer Motion (or GSAP if preferred) should be used extensively
+
+Animate transitions between sections, elements, buttons, and icons
+
+Pages/Sections Required:
+
+Home Page – brief intro, CTA
+
+About Section – legacy, brand story, etc.
+
+Services – list of offerings (e.g. fades, trims, beard, kids cuts)
+
+Our Work – photos of real customer cuts (image gallery w/ animations)
+
+Reviews – testimonials from real clients (animated stars, sliding cards, etc.)
+
+Find Us – map, address, hours, phone, Google Maps link
+
+Theme Examples:
+Similar to brands like Apple (black/white minimal), with animated details from modern agencies.
+
+📍 Business Details to Include:
+Name: LEGACY BARBERS BARBERSHOP 💈
+
+Google Maps Link: https://www.google.com/maps/place/LEGACY+BARBERS+BARBERSHOP+💈
+
+Address: 401 W Donegan Ave b, Kissimmee, FL 34741, United States
+
+Phone: +1 (407) 866-7586
+
+Hours:
+
+Monday: 9 a.m.–5 p.m.
+
+Tuesday–Saturday: 9 a.m.–6 p.m.
+
+Sunday: 9 a.m.–5 p.m.
+
+🧰 Tech Stack Requirements:
+React + Vite or Next.js
+
+Framer Motion for all animations
+
+TailwindCSS (custom theme: black, gray, white, red, blue)
+
+Heroicons / React Icons
+
+Image gallery with zoom/lightbox for "Our Work"
+
+Deployed on Vercel
+
+📝 Design Notes:
+Every scroll interaction must animate (fade in, slide, bounce, zoom, etc.)
+
+Section transitions should be smooth and luxurious
+
+Icons should animate in with soft motion
+
+Buttons must be fully rounded with hover animations
+
+Use shadows and subtle gradients to enhance depth
+
+Desktop and mobile layouts should feel equally elite
+
+✅ Deliverables:
+Fully functional multi-page app
+
+Responsive layout
+
+Deployed live on Vercel
+
+Link to deployed site + GitHub repo
+
+All animations and styling complete
+
+This is not a basic barbershop site. It should feel like a premium digital experience with seamless animation and aesthetic polish throughout.
+
