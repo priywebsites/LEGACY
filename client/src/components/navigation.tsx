@@ -106,7 +106,7 @@ export default function Navigation() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2 mr-2"
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
