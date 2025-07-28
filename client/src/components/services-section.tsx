@@ -6,39 +6,27 @@ export default function ServicesSection() {
   const services = [
     {
       icon: Scissors,
-      title: "Premium Cuts",
-      description: "Classic and modern haircuts tailored to your face shape and lifestyle.",
-      price: "$25+"
+      title: "Premium Cuts"
     },
     {
       icon: Slice,
-      title: "Straight Slice Shaves",
-      description: "Traditional hot towel shaves with precision and attention to detail.",
-      price: "$20+"
+      title: "Line Up"
     },
     {
       icon: Users,
-      title: "Beard Grooming",
-      description: "Professional beard trimming, shaping, and styling services.",
-      price: "$15+"
+      title: "Beard Grooming"
     },
     {
       icon: Baby,
-      title: "Kids Cuts",
-      description: "Fun and comfortable haircuts for children of all ages.",
-      price: "$18+"
+      title: "Kids Cuts"
     },
     {
       icon: Sparkles,
-      title: "Skin Fades",
-      description: "Perfect skin fades and taper cuts with seamless blending.",
-      price: "$25+"
+      title: "Skin Fades"
     },
     {
       icon: Star,
-      title: "Luxury Package",
-      description: "Complete grooming experience with cut, shave, and styling.",
-      price: "$45+"
+      title: "Luxury Package"
     }
   ];
 
@@ -74,55 +62,54 @@ export default function ServicesSection() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 50, rotateX: -30, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12
+                }}
                 viewport={{ once: true }}
                 whileHover={{ 
-                  y: -8,
-                  transition: { duration: 0.3 }
+                  y: -12,
+                  scale: 1.05,
+                  rotateY: 5,
+                  transition: { duration: 0.4, type: "spring", stiffness: 300 }
                 }}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
                 <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  initial={{ scale: 0, rotate: -180 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: index * 0.15 + 0.3,
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 10
+                  }}
                   viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.2,
+                    rotate: 10,
+                    transition: { duration: 0.3 }
+                  }}
                   className="text-legacy-dark mb-4"
                 >
                   <IconComponent size={48} />
                 </motion.div>
                 
                 <motion.h3
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                  initial={{ opacity: 0, rotateX: -30 }}
+                  whileInView={{ opacity: 1, rotateX: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 + 0.4, type: "spring", stiffness: 100 }}
                   viewport={{ once: true }}
                   className="text-2xl font-bold mb-4"
                 >
                   {service.title}
                 </motion.h3>
-                
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
-                  viewport={{ once: true }}
-                  className="text-gray-600 mb-6"
-                >
-                  {service.description}
-                </motion.p>
-                
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
-                  viewport={{ once: true }}
-                  className="text-2xl font-bold text-gray-800"
-                >
-                  {service.price}
-                </motion.div>
               </motion.div>
             );
           })}

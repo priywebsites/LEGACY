@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import barbershopImage from "@/assets/barbershop-interior.png";
 
 export default function HeroSection() {
   const scrollToServices = () => {
@@ -23,7 +24,7 @@ export default function HeroSection() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')`
+          backgroundImage: `url(${barbershopImage})`
         }}
       />
       
@@ -35,17 +36,19 @@ export default function HeroSection() {
           className="text-5xl md:text-7xl font-black mb-6"
         >
           <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.8, rotateX: -90 }}
+            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+            transition={{ delay: 0.3, duration: 0.8, type: "spring", stiffness: 100 }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
             className="gradient-text block"
           >
             LEGACY
           </motion.span>
           <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.8, rotateX: 90 }}
+            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+            transition={{ delay: 0.5, duration: 0.8, type: "spring", stiffness: 100 }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
             className="text-white block"
           >
             BARBERS
@@ -53,12 +56,32 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.7, duration: 1.2, ease: "easeOut" }}
           className="text-xl md:text-2xl text-gray-300 mb-8 font-light"
         >
-          Premium cuts. Timeless style. Modern experience.
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.0, duration: 0.6 }}
+          >
+            Premium cuts.
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+          >
+            Timeless style.
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.4, duration: 0.6 }}
+          >
+            Modern experience.
+          </motion.span>
         </motion.p>
 
         <motion.div

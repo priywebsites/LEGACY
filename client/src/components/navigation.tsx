@@ -64,15 +64,30 @@ export default function Navigation() {
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
+                  initial={{ opacity: 0, y: -20, rotateX: -30 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  transition={{ 
+                    delay: 0.4 + index * 0.1,
+                    duration: 0.6,
+                    type: "spring",
+                    stiffness: 120
+                  }}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
-                  whileHover={{ scale: 1.05 }}
+                  className="text-white hover:text-gray-300 transition-colors duration-300 font-medium relative"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    y: -2,
+                    transition: { duration: 0.2 }
+                  }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {item.label}
+                  <motion.span
+                    whileHover={{
+                      textShadow: "0 0 8px rgba(255,255,255,0.5)"
+                    }}
+                  >
+                    {item.label}
+                  </motion.span>
                 </motion.button>
               ))}
             </motion.div>

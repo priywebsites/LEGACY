@@ -36,9 +36,14 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -50, rotateY: -20, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
+            transition={{ 
+              duration: 1.0,
+              type: "spring",
+              stiffness: 100,
+              damping: 12
+            }}
             viewport={{ once: true }}
           >
             <div className="legacy-black rounded-2xl p-8 shadow-xl">
@@ -54,10 +59,19 @@ export default function ContactSection() {
               
               {/* Address */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                initial={{ opacity: 0, x: -20, scale: 0.8 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: 0.3,
+                  type: "spring",
+                  stiffness: 150
+                }}
                 viewport={{ once: true }}
+                whileHover={{
+                  x: 5,
+                  transition: { duration: 0.3 }
+                }}
                 className="flex items-start mb-6"
               >
                 <div className="text-gray-400 text-2xl mr-4 mt-1">

@@ -19,11 +19,21 @@ export default function Footer() {
           className="text-center"
         >
           <motion.h3
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.9, rotateZ: -5 }}
+            whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              delay: 0.2,
+              type: "spring",
+              stiffness: 120
+            }}
             viewport={{ once: true }}
-            className="text-2xl font-bold gradient-text mb-4"
+            whileHover={{
+              scale: 1.05,
+              rotateZ: 1,
+              transition: { duration: 0.3 }
+            }}
+            className="text-2xl font-bold gradient-text mb-4 cursor-pointer"
           >
             LEGACY BARBERS BARBERSHOP 💈
           </motion.h3>

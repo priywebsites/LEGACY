@@ -106,4 +106,22 @@ The frontend follows a component-based architecture with:
 - TypeScript checking and error reporting
 - Replit-specific plugins for cloud development
 
-The application is currently a static website showcasing the barbershop with prepared infrastructure for future dynamic features like appointment booking or user authentication.
+## Recent Changes (July 28, 2025)
+
+### Updated Design & Animations
+- **Color Scheme**: Toned down red/blue colors to focus on black, gray, and white palette for professional look
+- **Services Section**: Removed prices and service descriptions, changed "Straight Slice Shaves" to "Line Up"
+- **Hero Background**: Replaced stock image with actual barbershop interior photo from client
+- **Enhanced Animations**: Added extensive Framer Motion animations throughout:
+  - 3D rotations and transforms on scroll
+  - Spring animations with custom stiffness/damping
+  - Blur and scale effects for dramatic entrances
+  - Complex hover animations with multiple properties
+  - Staggered animations for better visual flow
+
+### Vercel Deployment Ready
+- **Configuration**: Added vercel.json for proper deployment setup
+- **Asset Management**: Local image assets properly imported via Vite
+- **Build Process**: Optimized for Vercel's serverless architecture
+
+The application now features dramatically more animations and is ready for Vercel deployment with a refined, professional aesthetic focusing on the black/gray/white color scheme as requested.

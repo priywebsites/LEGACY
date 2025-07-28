@@ -63,18 +63,33 @@ export default function WorkGallery() {
           {workImages.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, scale: 0.5, rotateY: 90, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, scale: 1, rotateY: 0, filter: "blur(0px)" }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.08, 
+                rotateY: 5,
+                z: 10,
+                transition: { duration: 0.4, type: "spring", stiffness: 300 }
+              }}
               className="group cursor-pointer"
               onClick={() => setSelectedImage(image.src)}
             >
-              <img
+              <motion.img
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-48 object-cover rounded-xl transition-transform duration-300 group-hover:brightness-110"
+                whileHover={{
+                  filter: "brightness(1.2) contrast(1.1) saturate(1.1)",
+                  transition: { duration: 0.3 }
+                }}
               />
             </motion.div>
           ))}

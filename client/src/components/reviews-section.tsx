@@ -49,13 +49,21 @@ export default function ReviewsSection() {
           {reviews.map((review, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              initial={{ opacity: 0, y: 50, rotateX: -20, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.2,
+                type: "spring",
+                stiffness: 120,
+                damping: 12
+              }}
               viewport={{ once: true }}
               whileHover={{ 
-                y: -5,
-                transition: { duration: 0.3 }
+                y: -8,
+                scale: 1.02,
+                rotateY: 2,
+                transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
               className="legacy-light rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             >
