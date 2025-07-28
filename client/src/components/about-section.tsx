@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import aboutImage from "@/assets/about-barbershop.png";
 
 export default function AboutSection() {
   const sectionRef = useScrollAnimation();
@@ -127,10 +128,16 @@ export default function AboutSection() {
             whileHover={{ scale: 1.02 }}
             className="transition-transform duration-300"
           >
-            <img
-              src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-              alt="Professional barber cutting hair"
-              className="rounded-2xl shadow-2xl w-full h-auto"
+            <motion.img
+              src={aboutImage}
+              alt="Legacy Barbers Interior"
+              className="rounded-2xl shadow-2xl w-full h-auto object-cover"
+              whileHover={{ 
+                scale: 1.05, 
+                rotateY: 5,
+                rotateX: 5,
+                transition: { duration: 0.3, type: "spring", stiffness: 200 }
+              }}
             />
           </motion.div>
         </div>

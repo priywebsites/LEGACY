@@ -18,84 +18,138 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Dynamic gradient background with blue/red accents */}
+      {/* Dynamic glassy gradient background */}
       <motion.div 
         className="absolute inset-0"
         animate={{
           background: [
-            "linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #0a0a2a 50%, #2a0a0a 75%, #000000 100%)",
-            "linear-gradient(225deg, #1a1a1a 0%, #000000 25%, #2a0a0a 50%, #0a0a2a 75%, #1a1a1a 100%)",
-            "linear-gradient(45deg, #000000 0%, #0a0a2a 25%, #1a1a1a 50%, #2a0a0a 75%, #000000 100%)",
-            "linear-gradient(315deg, #2a0a0a 0%, #1a1a1a 25%, #000000 50%, #0a0a2a 75%, #2a0a0a 100%)"
+            "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #1a2a3a 50%, #3a1a2a 75%, #2a2a2a 100%)",
+            "linear-gradient(225deg, #2a2a2a 0%, #1a1a1a 25%, #3a1a2a 50%, #1a2a3a 75%, #2a2a2a 100%)",
+            "linear-gradient(45deg, #1a1a1a 0%, #1a2a3a 25%, #2a2a2a 50%, #3a1a2a 75%, #1a1a1a 100%)",
+            "linear-gradient(315deg, #3a1a2a 0%, #2a2a2a 25%, #1a1a1a 50%, #1a2a3a 75%, #3a1a2a 100%)"
           ]
         }}
         transition={{
-          duration: 12,
+          duration: 15,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "easeInOut"
         }}
       />
       
-      {/* Overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+      {/* Glass overlay effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-gray-900/30 to-black/40 backdrop-blur-sm" />
       
-      {/* Floating geometric shapes with subtle colors */}
+      {/* Shimmer effect */}
+      <motion.div
+        className="absolute inset-0 opacity-20"
+        animate={{
+          background: [
+            "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 80% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 50% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+            "radial-gradient(circle at 50% 80%, rgba(255,255,255,0.1) 0%, transparent 50%)"
+          ]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      
+      {/* Enhanced floating geometric shapes with more animation */}
       <motion.div
         className="absolute inset-0 overflow-hidden"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.15 }}
+        animate={{ opacity: 0.2 }}
         transition={{ duration: 2 }}
       >
-        {[...Array(8)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className={`absolute w-24 h-24 rounded-lg ${
-              i % 3 === 0 ? 'border border-blue-500/20 bg-blue-500/5' :
-              i % 3 === 1 ? 'border border-red-500/20 bg-red-500/5' :
-              'border border-white/20 bg-white/5'
+            className={`absolute rounded-lg ${
+              i % 4 === 0 ? 'w-16 h-16 border border-blue-500/20 bg-blue-500/5' :
+              i % 4 === 1 ? 'w-20 h-20 border border-red-500/20 bg-red-500/5' :
+              i % 4 === 2 ? 'w-12 h-32 border border-white/20 bg-white/5' :
+              'w-28 h-28 border border-gray-500/20 bg-gray-500/5 rounded-full'
             }`}
             style={{
-              left: `${10 + i * 12}%`,
-              top: `${5 + i * 11}%`,
+              left: `${5 + i * 8}%`,
+              top: `${3 + i * 7}%`,
             }}
             animate={{
-              rotate: [0, 360],
-              scale: [0.8, 1.3, 0.8],
-              opacity: [0.1, 0.4, 0.1],
-              x: [0, 30, 0],
-              y: [0, -20, 0]
+              rotate: [0, 360, -180, 360],
+              scale: [0.5, 1.5, 0.8, 1.2, 0.5],
+              opacity: [0.1, 0.6, 0.2, 0.4, 0.1],
+              x: [0, 50, -30, 20, 0],
+              y: [0, -40, 30, -10, 0],
+              rotateX: [0, 180, 0],
+              rotateY: [0, 360, 0]
             }}
             transition={{
-              duration: 15 + i * 3,
+              duration: 20 + i * 4,
               repeat: Infinity,
-              delay: i * 0.8,
+              delay: i * 1.2,
               ease: "easeInOut"
             }}
           />
         ))}
       </motion.div>
       
-      {/* Particle effect */}
+      {/* Enhanced particle effect with pulsing */}
       <motion.div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={`particle-${i}`}
-            className="absolute w-1 h-1 bg-white/30 rounded-full"
+            className={`absolute rounded-full ${
+              i % 3 === 0 ? 'w-2 h-2 bg-blue-400/40' :
+              i % 3 === 1 ? 'w-1 h-1 bg-red-400/40' :
+              'w-1.5 h-1.5 bg-white/40'
+            }`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
-              y: [0, -100, 0]
+              opacity: [0, 1, 0.5, 1, 0],
+              scale: [0, 1.5, 0.8, 2, 0],
+              y: [0, -150, -50, -200, 0],
+              x: [0, Math.random() * 50 - 25, 0],
+              rotate: [0, 360, 180, 720, 0]
             }}
             transition={{
-              duration: 6 + Math.random() * 4,
+              duration: 8 + Math.random() * 6,
               repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "easeOut"
+              delay: Math.random() * 8,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </motion.div>
+      
+      {/* Floating orbs */}
+      <motion.div className="absolute inset-0 overflow-hidden">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`orb-${i}`}
+            className="absolute w-20 h-20 rounded-full bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm"
+            style={{
+              left: `${15 + i * 15}%`,
+              top: `${20 + i * 10}%`,
+            }}
+            animate={{
+              y: [0, -30, 0, 30, 0],
+              x: [0, 20, -10, 15, 0],
+              scale: [1, 1.2, 0.8, 1.1, 1],
+              opacity: [0.2, 0.5, 0.3, 0.6, 0.2],
+              rotate: [0, 180, 360]
+            }}
+            transition={{
+              duration: 12 + i * 2,
+              repeat: Infinity,
+              delay: i * 1.5,
+              ease: "easeInOut"
             }}
           />
         ))}
@@ -165,10 +219,14 @@ export default function HeroSection() {
         >
           <Button
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="bg-white text-black hover:bg-gray-200 font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
             size="lg"
           >
-            <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.span 
+              whileHover={{ scale: 1.05, rotateX: 5 }} 
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
               Book Appointment
             </motion.span>
           </Button>
