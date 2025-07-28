@@ -18,48 +18,84 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated gradient background */}
+      {/* Dynamic gradient background with blue/red accents */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-legacy-black via-gray-900 to-legacy-gray"
+        className="absolute inset-0"
         animate={{
           background: [
-            "linear-gradient(45deg, #000000, #1a1a1a, #333333)",
-            "linear-gradient(90deg, #1a1a1a, #000000, #2a2a2a)",
-            "linear-gradient(135deg, #333333, #1a1a1a, #000000)",
-            "linear-gradient(45deg, #000000, #1a1a1a, #333333)"
+            "linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #0a0a2a 50%, #2a0a0a 75%, #000000 100%)",
+            "linear-gradient(225deg, #1a1a1a 0%, #000000 25%, #2a0a0a 50%, #0a0a2a 75%, #1a1a1a 100%)",
+            "linear-gradient(45deg, #000000 0%, #0a0a2a 25%, #1a1a1a 50%, #2a0a0a 75%, #000000 100%)",
+            "linear-gradient(315deg, #2a0a0a 0%, #1a1a1a 25%, #000000 50%, #0a0a2a 75%, #2a0a0a 100%)"
           ]
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse",
+          ease: "easeInOut"
         }}
       />
       
-      {/* Floating geometric shapes */}
+      {/* Overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+      
+      {/* Floating geometric shapes with subtle colors */}
       <motion.div
         className="absolute inset-0 overflow-hidden"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
+        animate={{ opacity: 0.15 }}
         transition={{ duration: 2 }}
       >
-        {[...Array(6)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-32 h-32 border border-white/20 rounded-lg"
+            className={`absolute w-24 h-24 rounded-lg ${
+              i % 3 === 0 ? 'border border-blue-500/20 bg-blue-500/5' :
+              i % 3 === 1 ? 'border border-red-500/20 bg-red-500/5' :
+              'border border-white/20 bg-white/5'
+            }`}
             style={{
-              left: `${20 + i * 15}%`,
-              top: `${10 + i * 10}%`,
+              left: `${10 + i * 12}%`,
+              top: `${5 + i * 11}%`,
             }}
             animate={{
               rotate: [0, 360],
-              scale: [1, 1.2, 1],
-              opacity: [0.1, 0.3, 0.1]
+              scale: [0.8, 1.3, 0.8],
+              opacity: [0.1, 0.4, 0.1],
+              x: [0, 30, 0],
+              y: [0, -20, 0]
             }}
             transition={{
-              duration: 10 + i * 2,
+              duration: 15 + i * 3,
               repeat: Infinity,
-              delay: i * 0.5
+              delay: i * 0.8,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </motion.div>
+      
+      {/* Particle effect */}
+      <motion.div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={`particle-${i}`}
+            className="absolute w-1 h-1 bg-white/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0, 1, 0],
+              scale: [0, 1, 0],
+              y: [0, -100, 0]
+            }}
+            transition={{
+              duration: 6 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeOut"
             }}
           />
         ))}
@@ -129,7 +165,7 @@ export default function HeroSection() {
         >
           <Button
             onClick={scrollToContact}
-            className="legacy-dark hover:bg-gray-800 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
             size="lg"
           >
             <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

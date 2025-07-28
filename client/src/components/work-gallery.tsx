@@ -3,42 +3,20 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 
+// Import work images
+import work1 from "@/assets/work1.png";
+import work2 from "@/assets/work2.png"; 
+import work3 from "@/assets/work3.png";
+import work4 from "@/assets/work4.png";
+
 export default function WorkGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const workImages = [
-    {
-      src: "https://images.unsplash.com/photo-1622296451230-39ad17d0b9a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Modern fade haircut"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1622322062536-895d869b09ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Professional beard trim"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Perfect skin fade"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1616951849649-74dd2dd7e662?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Classic gentleman's haircut"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1506629905352-b2308d05ca48?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Modern textured haircut"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Business professional haircut"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Classic pompadour style"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1588117260148-b47818741c74?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Modern quiff haircut"
-    }
+    { src: work1, alt: "Premium waves and line up" },
+    { src: work2, alt: "Classic fade with precision" },
+    { src: work3, alt: "Perfect skin fade technique" },
+    { src: work4, alt: "Clean line up and styling" }
   ];
 
   return (
