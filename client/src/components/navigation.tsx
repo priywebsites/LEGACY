@@ -55,7 +55,7 @@ export default function Navigation() {
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('home')}
             />
-            <h1 className="text-xl font-bold gradient-text cursor-pointer hidden sm:block" onClick={() => scrollToSection("home")}>
+            <h1 className="text-lg sm:text-xl font-bold gradient-text cursor-pointer" onClick={() => scrollToSection("home")}>
               LEGACY BARBERS
             </h1>
           </motion.div>
