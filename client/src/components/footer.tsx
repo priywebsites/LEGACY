@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import logoImage from "@/assets/79150240349_1753730345989.png";
 
 export default function Footer() {
   const socialLinks = [
@@ -18,25 +19,40 @@ export default function Footer() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <motion.h3
-            initial={{ opacity: 0, scale: 0.9, rotateZ: -5 }}
-            whileInView={{ opacity: 1, scale: 1, rotateZ: 0 }}
-            transition={{ 
-              duration: 0.8, 
-              delay: 0.2,
-              type: "spring",
-              stiffness: 120
-            }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            whileHover={{
-              scale: 1.05,
-              rotateZ: 1,
-              transition: { duration: 0.3 }
-            }}
-            className="text-2xl font-bold gradient-text mb-4 cursor-pointer"
+            className="flex items-center justify-center mb-4"
           >
-            LEGACY BARBERS BARBERSHOP 💈
-          </motion.h3>
+            <motion.img
+              src={logoImage}
+              alt="Legacy Barbers Logo"
+              className="h-16 w-auto mr-4"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.h3
+              initial={{ opacity: 0, rotateZ: -5 }}
+              whileInView={{ opacity: 1, rotateZ: 0 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.4,
+                type: "spring",
+                stiffness: 120
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.05,
+                rotateZ: 1,
+                transition: { duration: 0.3 }
+              }}
+              className="text-2xl font-bold gradient-text cursor-pointer"
+            >
+              LEGACY BARBERS BARBERSHOP 💈
+            </motion.h3>
+          </motion.div>
           
           <motion.p
             initial={{ opacity: 0 }}

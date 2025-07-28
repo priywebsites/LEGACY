@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import barbershopImage from "@/assets/barbershop-interior.png";
 
 export default function HeroSection() {
   const scrollToServices = () => {
@@ -19,14 +18,52 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-legacy-black via-legacy-gray to-legacy-black opacity-90"></div>
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${barbershopImage})`
+      {/* Animated gradient background */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-legacy-black via-gray-900 to-legacy-gray"
+        animate={{
+          background: [
+            "linear-gradient(45deg, #000000, #1a1a1a, #333333)",
+            "linear-gradient(90deg, #1a1a1a, #000000, #2a2a2a)",
+            "linear-gradient(135deg, #333333, #1a1a1a, #000000)",
+            "linear-gradient(45deg, #000000, #1a1a1a, #333333)"
+          ]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse"
         }}
       />
+      
+      {/* Floating geometric shapes */}
+      <motion.div
+        className="absolute inset-0 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 2 }}
+      >
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-32 h-32 border border-white/20 rounded-lg"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${10 + i * 10}%`,
+            }}
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.2, 1],
+              opacity: [0.1, 0.3, 0.1]
+            }}
+            transition={{
+              duration: 10 + i * 2,
+              repeat: Infinity,
+              delay: i * 0.5
+            }}
+          />
+        ))}
+      </motion.div>
       
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h1

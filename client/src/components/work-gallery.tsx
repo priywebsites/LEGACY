@@ -59,33 +59,37 @@ export default function WorkGallery() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="flex flex-col items-center space-y-4 max-w-md mx-auto">
           {workImages.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.5, rotateY: 90, filter: "blur(10px)" }}
-              whileInView={{ opacity: 1, scale: 1, rotateY: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 100, rotateZ: index % 2 === 0 ? -10 : 10 }}
+              whileInView={{ opacity: 1, y: 0, rotateZ: 0 }}
               transition={{ 
                 duration: 0.8, 
-                delay: index * 0.1,
+                delay: index * 0.2,
                 type: "spring",
                 stiffness: 100,
                 damping: 15
               }}
               viewport={{ once: true }}
               whileHover={{ 
-                scale: 1.08, 
-                rotateY: 5,
-                z: 10,
+                scale: 1.05,
+                rotateZ: index % 2 === 0 ? 2 : -2,
+                y: -10,
                 transition: { duration: 0.4, type: "spring", stiffness: 300 }
               }}
-              className="group cursor-pointer"
+              className="group cursor-pointer w-full max-w-sm relative"
+              style={{
+                zIndex: workImages.length - index,
+                marginTop: index > 0 ? '-20px' : '0'
+              }}
               onClick={() => setSelectedImage(image.src)}
             >
               <motion.img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-48 object-cover rounded-xl transition-transform duration-300 group-hover:brightness-110"
+                className="w-full h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:brightness-110"
                 whileHover={{
                   filter: "brightness(1.2) contrast(1.1) saturate(1.1)",
                   transition: { duration: 0.3 }

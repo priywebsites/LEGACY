@@ -169,20 +169,56 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Map Placeholder */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+          {/* Google Maps */}
+          <motion.div 
+            className="legacy-light rounded-2xl p-8 shadow-xl h-full"
+            initial={{ opacity: 0, x: 50, rotateY: 20, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
+            transition={{ 
+              duration: 1.0,
+              type: "spring",
+              stiffness: 100,
+              damping: 12
+            }}
             viewport={{ once: true }}
           >
-            <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center text-gray-600">
-              <div className="text-center">
-                <MapPin size={48} className="mx-auto mb-4" />
-                <p className="text-lg font-medium">Interactive Map</p>
-                <p className="text-sm">401 W Donegan Ave b, Kissimmee, FL</p>
-              </div>
-            </div>
+            <motion.h3 
+              className="text-2xl font-bold mb-6 text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Find Us on the Map
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-xl"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.7883849315845!2d-81.40722368494468!3d28.291908882574443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dd7ee06422d251%3A0x595bba1c874b1211!2sKissimmee%2C%20FL%2C%20USA!5e0!3m2!1sen!2sus!4v1697834567890!5m2!1sen!2sus"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-xl filter grayscale hover:grayscale-0 transition-all duration-500"
+                title="Legacy Barbers Location in Kissimmee, FL"
+              ></iframe>
+            </motion.div>
+            <motion.p 
+              className="text-gray-400 text-sm mt-4 text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Come visit us in the heart of Kissimmee for the ultimate barbering experience
+            </motion.p>
           </motion.div>
         </div>
       </div>

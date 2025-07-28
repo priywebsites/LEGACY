@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoImage from "@/assets/79150240349_1753730345989.png";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,9 +47,17 @@ export default function Navigation() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex-shrink-0"
+            className="flex-shrink-0 flex items-center"
           >
-            <h1 className="text-xl font-bold gradient-text cursor-pointer" onClick={() => scrollToSection("home")}>
+            <motion.img
+              src={logoImage}
+              alt="Legacy Barbers Logo"
+              className="h-10 w-auto mr-3 cursor-pointer"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('home')}
+            />
+            <h1 className="text-xl font-bold gradient-text cursor-pointer hidden sm:block" onClick={() => scrollToSection("home")}>
               LEGACY BARBERS
             </h1>
           </motion.div>
