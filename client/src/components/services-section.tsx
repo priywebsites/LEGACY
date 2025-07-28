@@ -89,7 +89,7 @@ export default function ServicesSection() {
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                   viewport={{ once: true }}
-                  className="text-legacy-red mb-4"
+                  className="text-legacy-dark mb-4"
                 >
                   <IconComponent size={48} />
                 </motion.div>
@@ -119,7 +119,7 @@ export default function ServicesSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
                   viewport={{ once: true }}
-                  className="text-2xl font-bold text-legacy-blue"
+                  className="text-2xl font-bold text-gray-800"
                 >
                   {service.price}
                 </motion.div>
@@ -137,7 +137,7 @@ export default function ServicesSection() {
         >
           <Button
             onClick={scrollToContact}
-            className="legacy-red hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg"
+            className="legacy-dark hover:bg-gray-800 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg"
             size="lg"
           >
             <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

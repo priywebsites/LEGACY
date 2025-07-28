@@ -64,7 +64,7 @@ export default function ReviewsSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                 viewport={{ once: true }}
-                className="flex text-legacy-red text-xl mb-4"
+                className="flex text-gray-700 text-xl mb-4"
               >
                 {[...Array(review.rating)].map((_, i) => (
                   <motion.div
@@ -118,7 +118,7 @@ export default function ReviewsSection() {
           className="text-center mt-12"
         >
           <Button
-            className="legacy-blue hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg"
+            className="legacy-dark hover:bg-gray-800 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg"
             size="lg"
           >
             <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

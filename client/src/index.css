@@ -13,11 +13,11 @@
   --card-foreground: hsl(0, 0%, 0%);
   --border: hsl(214.3, 31.8%, 91.4%);
   --input: hsl(214.3, 31.8%, 91.4%);
-  --primary: hsl(0, 72%, 51%);
+  --primary: hsl(0, 0%, 15%);
   --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(210, 40%, 96%);
+  --secondary: hsl(0, 0%, 96%);
   --secondary-foreground: hsl(0, 0%, 9%);
-  --accent: hsl(221, 83%, 53%);
+  --accent: hsl(0, 0%, 20%);
   --accent-foreground: hsl(0, 0%, 98%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(0, 0%, 98%);
@@ -28,6 +28,8 @@
   --legacy-black: hsl(0, 0%, 0%);
   --legacy-gray: hsl(0, 0%, 10%);
   --legacy-light: hsl(0, 0%, 96%);
+  --legacy-medium: hsl(0, 0%, 85%);
+  --legacy-dark: hsl(0, 0%, 15%);
   --legacy-red: hsl(0, 72%, 51%);
   --legacy-blue: hsl(221, 83%, 53%);
 }
@@ -43,12 +45,12 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(0, 0%, 15%);
   --input: hsl(0, 0%, 15%);
-  --primary: hsl(0, 72%, 51%);
-  --primary-foreground: hsl(0, 0%, 98%);
+  --primary: hsl(0, 0%, 85%);
+  --primary-foreground: hsl(0, 0%, 0%);
   --secondary: hsl(0, 0%, 10%);
   --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(221, 83%, 53%);
-  --accent-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(0, 0%, 70%);
+  --accent-foreground: hsl(0, 0%, 0%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(240, 4.9%, 83.9%);
@@ -71,7 +73,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, var(--legacy-red), var(--legacy-blue));
+    background: linear-gradient(135deg, hsl(0, 0%, 30%), hsl(0, 0%, 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -102,6 +104,14 @@
     background-color: var(--legacy-blue);
   }
 
+  .legacy-medium {
+    background-color: var(--legacy-medium);
+  }
+
+  .legacy-dark {
+    background-color: var(--legacy-dark);
+  }
+
   .text-legacy-red {
     color: var(--legacy-red);
   }
@@ -118,11 +128,23 @@
     color: var(--legacy-gray);
   }
 
+  .text-legacy-medium {
+    color: var(--legacy-medium);
+  }
+
+  .text-legacy-dark {
+    color: var(--legacy-dark);
+  }
+
   .border-legacy-red {
     border-color: var(--legacy-red);
   }
 
   .border-legacy-blue {
     border-color: var(--legacy-blue);
+  }
+
+  .border-legacy-medium {
+    border-color: var(--legacy-medium);
   }
 }

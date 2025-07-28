@@ -63,7 +63,7 @@ export default function AboutSection() {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className={`text-3xl font-bold mb-2 ${index % 2 === 0 ? 'text-legacy-red' : 'text-legacy-blue'}`}>
+                  <div className="text-3xl font-bold mb-2 text-legacy-black">
                     {stat.number}
                   </div>
                   <div className="text-sm text-gray-600">{stat.label}</div>

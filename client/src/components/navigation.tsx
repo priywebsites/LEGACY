@@ -68,7 +68,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-legacy-red transition-colors duration-300 font-medium"
+                  className="text-white hover:text-gray-300 transition-colors duration-300 font-medium"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -131,7 +131,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-3 py-2 text-white hover:text-legacy-red transition-colors duration-300 font-medium"
+                  className="block w-full text-left px-3 py-2 text-white hover:text-gray-300 transition-colors duration-300 font-medium"
                 >
                   {item.label}
                 </motion.button>

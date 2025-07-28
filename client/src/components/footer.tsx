@@ -58,10 +58,10 @@ export default function Footer() {
                   viewport={{ once: true }}
                   whileHover={{ 
                     scale: 1.2,
-                    color: index % 2 === 0 ? "var(--legacy-red)" : "var(--legacy-blue)",
+                    color: "var(--legacy-medium)",
                     transition: { duration: 0.2 }
                   }}
-                  className="text-gray-400 hover:text-legacy-red transition-colors text-2xl"
+                  className="text-gray-400 hover:text-gray-300 transition-colors text-2xl"
                 >
                   <IconComponent size={24} />
                 </motion.a>

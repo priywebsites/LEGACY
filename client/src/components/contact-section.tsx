@@ -60,7 +60,7 @@ export default function ContactSection() {
                 viewport={{ once: true }}
                 className="flex items-start mb-6"
               >
-                <div className="text-legacy-red text-2xl mr-4 mt-1">
+                <div className="text-gray-400 text-2xl mr-4 mt-1">
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -77,7 +77,7 @@ export default function ContactSection() {
                 viewport={{ once: true }}
                 className="flex items-start mb-6"
               >
-                <div className="text-legacy-blue text-2xl mr-4 mt-1">
+                <div className="text-gray-400 text-2xl mr-4 mt-1">
                   <Phone size={24} />
                 </div>
                 <div>
@@ -99,7 +99,7 @@ export default function ContactSection() {
                 viewport={{ once: true }}
                 className="flex items-start mb-8"
               >
-                <div className="text-legacy-red text-2xl mr-4 mt-1">
+                <div className="text-gray-400 text-2xl mr-4 mt-1">
                   <Clock size={24} />
                 </div>
                 <div>
@@ -131,7 +131,7 @@ export default function ContactSection() {
               >
                 <Button
                   asChild
-                  className="w-full legacy-red hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300"
+                  className="w-full legacy-dark hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300"
                 >
                   <a 
                     href={businessInfo.googleMapsUrl}
@@ -145,7 +145,7 @@ export default function ContactSection() {
                 </Button>
                 
                 <Button
-                  className="w-full legacy-blue hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300"
+                  className="w-full legacy-medium hover:bg-gray-400 text-legacy-black font-semibold py-3 px-6 rounded-full transition-all duration-300"
                 >
                   <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     Book Appointment
